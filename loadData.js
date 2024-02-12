@@ -13,7 +13,8 @@ async function loadData(dirs) {
   const data = {};
   for (const dir of dirs) {
     const d = await loadFile(dir);
-    data[d["locName"]] = d;
+    const nameCamelCase = d["locName"].slice(0, 1).toLowerCase() + d["locName"].slice(1);
+    data[nameCamelCase] = d;
   }
 
   return data;

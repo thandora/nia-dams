@@ -11,7 +11,20 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 const btnNorth = document.querySelector("#btn-balire-north");
-bindToNode(map, btnNorth, geoData["balireNorth"]);
+bindToNode(map, btnNorth, geoData["balireNorth"], coordsCenter);
 
-const btnSouth = document.querySelector("#btn-balire-south");
+const btnSouth = document.querySelector("#btn-balire-south", coordsCenter);
 bindToNode(map, btnSouth, geoData["balireSouth"]);
+
+const xTest = document.querySelector("#xtest");
+xTest.addEventListener("click", () => {
+  console.log(geoData["balireSouth"]);
+
+  map.setView(geoData["balireSouth"].getBounds().getCenter());
+});
+
+function onMapClick(e) {
+  console.log(e.latlng);
+}
+
+map.on("click", onMapClick);

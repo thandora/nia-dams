@@ -1,5 +1,7 @@
 # NIA Dam Sites
 
+Preview: [NIA Dam Sites](https://thandora.github.io/nia-dams/)
+
 ## Quick Start
 
 To add a new site location:

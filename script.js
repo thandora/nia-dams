@@ -10,21 +10,22 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
+const centerNorthBalire = { lat: 10.822768169803306, lng: 124.97609138488771 };
 const btnNorth = document.querySelector("#btn-balire-north");
-bindToNode(map, btnNorth, geoData["balireNorth"], coordsCenter);
+bindToNode(map, btnNorth, geoData["balireNorth"], centerNorthBalire);
 
-const btnSouth = document.querySelector("#btn-balire-south", coordsCenter);
-bindToNode(map, btnSouth, geoData["balireSouth"]);
+const centerSouthBalire = { lat: 10.804220717725277, lng: 124.98106956481935 };
+const btnSouth = document.querySelector("#btn-balire-south");
+bindToNode(map, btnSouth, geoData["balireSouth"], centerSouthBalire);
 
 const xTest = document.querySelector("#xtest");
 xTest.addEventListener("click", () => {
   console.log(geoData["balireSouth"]);
-
-  map.setView(geoData["balireSouth"].getBounds().getCenter());
 });
 
-function onMapClick(e) {
-  console.log(e.latlng);
-}
+// Helper function. Useful for getting center of dam sites.
+// function onMapClick(e) {
+//   console.log(e.latlng);
+// }
 
 map.on("click", onMapClick);

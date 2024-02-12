@@ -73,7 +73,7 @@ function initInfo(map) {
 
 const info = initInfo(map);
 
-function bindToNode(map, nodeButton, geoData) {
+function bindToNode(map, nodeButton, geoData, center) {
   const overlayLayer = initAreaOverlay(geoData, map, info);
 
   // Create info box only ONCE.
@@ -87,6 +87,12 @@ function bindToNode(map, nodeButton, geoData) {
     } else {
       overlayLayer.addTo(map);
     }
+  });
+
+  const btnId = nodeButton.id;
+  const btnCenter = document.querySelector(`#${btnId}+.btn-center`);
+  btnCenter.addEventListener("click", () => {
+    map.setView(center);
   });
 }
 

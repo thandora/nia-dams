@@ -1,14 +1,14 @@
 function blackStyle(feature) {
   return {
     color: "black",
-    weight: 3,
+    weight: 2,
   };
 }
 
 function hoverStyle(feature) {
   return {
     color: "#5e60e4",
-    weight: 5,
+    weight: 4,
   };
 }
 

@@ -14,8 +14,7 @@ body {
 
 /* Map dimension */
 #map {
-  height: 600px;
-  width: 800px;
+  height: 85vh;
 }
 
 /* Info box displayed on top-right of map. */

@@ -18,14 +18,6 @@ const centerSouthBalire = { lat: 10.804220717725277, lng: 124.98106956481935 };
 const btnSouth = document.querySelector("#btn-balire-south");
 bindToNode(map, btnSouth, geoData["balireSouth"], centerSouthBalire);
 
-const xTest = document.querySelector("#xtest");
-xTest.addEventListener("click", () => {
-  console.log(geoData["balireSouth"]);
-});
-
-// Helper function. Useful for getting center of dam sites.
-// function onMapClick(e) {
-//   console.log(e.latlng);
-// }
-
-map.on("click", onMapClick);
+// Helper functions. Remove/comment out if not needed
+import { initTests } from "./helper.js";
+initTests(map, geoData);

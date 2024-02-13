@@ -24,6 +24,7 @@ for (const data of Object.entries(geoData)) {
   const geoData = data[1];
 
   const center = centerData[rawSysName];
+  const center2 = geoData["center_coords"];
   const btnContainer = buttonConstructor(sysName);
 
   bindButtonEvents(btnContainer, center, map, geoData);

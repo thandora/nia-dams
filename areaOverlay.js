@@ -12,6 +12,7 @@ function hoverStyle(feature) {
   };
 }
 
+// TODO mapObject redundant?
 function initAreaOverlay(geoData, mapObject, infoObject) {
   function hoverHandler(event) {
     let currentLayer = event.target;

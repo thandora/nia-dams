@@ -3,20 +3,19 @@ import { bindToNode } from "./areaOverlay.js";
 function buttonConstructor(sysName) {
   const navLinkContainer = document.createElement("li");
 
-  const btnOverlay = document.createElement("button");
-  btnOverlay.classList.add("btn-nav-overlay");
-
-  const btnCenter = document.createElement("span");
-  btnCenter.classList.add("material-symbols-outlined");
+  const btnCenter = document.createElement("button");
   btnCenter.classList.add("btn-nav-center");
-  btnCenter.textContent = "explore_nearby";
+
+  const btnOverlay = document.createElement("span");
+  btnOverlay.classList.add("material-symbols-outlined");
+  btnOverlay.classList.add("btn-nav-overlay");
+  btnOverlay.textContent = "explore_nearby";
 
   // TODO make marker button
   // const btnMarker = document.createElement("button");
 
-  btnOverlay.textContent = sysName;
-  navLinkContainer.append(btnOverlay, btnCenter);
-
+  btnCenter.textContent = sysName;
+  navLinkContainer.append(btnCenter, btnOverlay);
   // Insert new button to classname
   document.querySelector(".navbar").appendChild(navLinkContainer);
   

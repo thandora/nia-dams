@@ -9,28 +9,24 @@ let map = L.map("map").setView(coordsDefault, 14);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 25,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
+map.attributionControl.remove();
 
-// const centerNorthBalire = { lat: 10.822768169803306, lng: 124.97609138488771 };
-// const btnNorth = document.querySelector("#btn-balire-north");
-// bindToNode(map, btnNorth, geoData["balireNorth"], centerNorthBalire);
-
-// const centerSouthBalire = { lat: 10.804220717725277, lng: 124.98106956481935 };
-// const btnSouth = document.querySelector("#btn-balire-south");
-// bindToNode(map, btnSouth, geoData["balireSouth"], centerSouthBalire);
-
+// For each dam site in geoData:
+// create buttons
+// bind the function initAreaOverlay() to the button
+// bind the function initInfo() to the button
 for (const data of Object.entries(geoData)) {
   const rawSysName = data[0];
   const sysName = addSpace(rawSysName);
   const geoData = data[1];
 
   const center = centerData[rawSysName];
-  const overLayButton = buttonConstructor(sysName);
+  const btnContainer = buttonConstructor(sysName);
 
-  console.log(center);
-
-  bindButtonEvents(overLayButton, center, map, geoData);
+  bindButtonEvents(btnContainer, center, map, geoData);
 }
 
 // Helper function
@@ -68,4 +64,4 @@ function addSpace(titleCasedString) {
 
 // Helper functions. Remove/comment out if not needed
 import { initTests } from "./helper.js";
-initTests(map, geoData);
+// initTests(map, geoData);

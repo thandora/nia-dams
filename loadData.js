@@ -7,13 +7,19 @@ async function loadFile(dir) {
 }
 
 // Directory of .geojson files
-const directories = ["./geos/balire-north.geojson", "./geos/balire-south.geojson"];
+const directories = [
+  "./geos/balire-north.geojson",
+  "./geos/balire-south.geojson",
+  "./geos/bao.geojson",
+  "./geos/mainit.geojson",
+];
 
 async function loadData(dirs) {
   const data = {};
   for (const dir of dirs) {
     const d = await loadFile(dir);
-    const nameCamelCase = d["locName"].slice(0, 1).toLowerCase() + d["locName"].slice(1);
+    const nameCamelCase =
+      d["locName"].slice(0, 1).toLowerCase() + d["locName"].slice(1);
     data[nameCamelCase] = d;
   }
 

@@ -60,7 +60,9 @@ function initInfo(map) {
       innerHtml =
         `<b>Region ${properties["Region"]}, ${properties["Pro_Name"]}</b><br>` +
         `${properties["Sys_Name"]}<br>` +
-        `Area: ${properties["area"]} hectares (1 hectare = 10000m<sup>2</sup>)`;
+        `Area: ${properties["area"]} hectares<br>` +
+        `IA: ${properties["ia"]}<br>` +
+        `FUSA: ${properties["fusa"]}<br>`;
     } else {
       innerHtml = "Hover over an area";
     }
@@ -73,7 +75,7 @@ function initInfo(map) {
 
 const info = initInfo(map);
 
-function bindToNode(map, nodeButton, geoData, center) {
+function bindToNode(map, nodeBtnContainer, geoData, center) {
   const overlayLayer = initAreaOverlay(geoData, map, info);
 
   // Create info box only ONCE.
@@ -81,7 +83,8 @@ function bindToNode(map, nodeButton, geoData, center) {
     info.addTo(map);
   }
 
-  nodeButton.addEventListener("click", () => {
+  const btnOverlay = nodeBtnContainer.querySelector(".btn-nav-overlay");
+  btnOverlay.addEventListener("click", () => {
     if (map.hasLayer(overlayLayer)) {
       map.removeLayer(overlayLayer);
     } else {
@@ -89,8 +92,16 @@ function bindToNode(map, nodeButton, geoData, center) {
     }
   });
 
-  const btnClassName = nodeButton.className;
-  const btnCenter = document.querySelector(`.${btnClassName}+.btn-center`);
+  //  li
+  //    bt
+  //    bt
+  //    bt
+  //    bt
+
+  // btnOverlay.classList.add("btn-nav");
+  //  btnCenter.classList.add("btn-center");
+
+  const btnCenter = nodeBtnContainer.querySelector(`.btn-nav-center`);
   btnCenter.addEventListener("click", () => {
     map.setView(center);
   });

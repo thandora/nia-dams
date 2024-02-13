@@ -10,11 +10,17 @@ html {
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 /* Map dimension */
 #map {
-  height: 85vh;
+  height: 86vh;
+  width: 155vh;
+  left: 47vh;
+  top: 8vh;
+  flex: 1;
+  border-radius: 9px;
 }
 
 /* Info box displayed on top-right of map. */
@@ -34,7 +40,17 @@ body {
 
 /* Nav */
 .navbar {
-  display: flex;
+  position: absolute;
+  top: 0;
+  left: 4vh;
+  height: 120%;
+  width: 250px; /* Adjust the width as needed */
+  background-color: rgb(0, 80, 8); /* Adjust background color */
+  padding: 20px;
+  border-right: 1px solid #ccc; /* Add border to separate from map */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  z-index: 1000; /* Ensure it's on top of the map */
+  list-style-type: none;
 }
 
 .nav-btn-container {
@@ -44,33 +60,37 @@ body {
   width: 150px;
 }
 
-.btn-nav {
+.btn-nav-overlay {
   width: 125px;
   outline: none;
   cursor: pointer;
-  font-weight: 500;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  height: 36px;
-  line-height: 34px;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #007c89;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  height: 39px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #000000;
+  background-color: #ffffff;
   transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-  padding: 0 18px;
+  padding: 0 20px;
+  margin-top: 0.5vh;
 }
 
-.btn-nav:hover {
+.btn-nav-overlay:hover {
   color: #ffffff;
   background-color: #006570;
 }
 
-.btn-center {
+.btn-nav-center {
   cursor: pointer;
   font-size: 2rem;
-  color: #007c89;
+  color: #ffffff;
+  margin-left: 3vh;
+  margin-top: 1vh;
+  position: absolute;
 }
 
-.btn-center:hover {
+.btn-nav-center:hover {
   color: #006570;
 }

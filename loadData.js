@@ -20,5 +20,10 @@ async function loadData(dirs) {
   return data;
 }
 
+const centerData = {
+  balireNorth: { lat: 10.822768169803306, lng: 124.97609138488771 },
+  balireSouth: { lat: 10.804220717725277, lng: 124.98106956481935 },
+};
+
 const geoData = await loadData(directories);
-export { geoData };
+export { geoData, centerData };

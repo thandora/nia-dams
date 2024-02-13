@@ -89,8 +89,8 @@ function bindToNode(map, nodeButton, geoData, center) {
     }
   });
 
-  const btnId = nodeButton.id;
-  const btnCenter = document.querySelector(`#${btnId}+.btn-center`);
+  const btnClassName = nodeButton.className;
+  const btnCenter = document.querySelector(`.${btnClassName}+.btn-center`);
   btnCenter.addEventListener("click", () => {
     map.setView(center);
   });

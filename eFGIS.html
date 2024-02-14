@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar1">
+            <a href="https://www.gov.ph"><b>GOVPH</b></a>
+        </div>
+        <div class="navbar2">
+            <a href="Navigation.html">Dashboard</a>
+            <div class="dropdown">
+                <!-- <button class="dropbtn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button> -->
+                <!-- <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+            </div>
+            <a href="eFGIS.html">QGIS</a>
+            <a href="#contact">Farm Administration System</a>
+            <a href="#home">Water Delivery and Distribution</a>
+            <a href="#about">Other Essential Data</a>
+            <a href="#about">Settings</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>NATIONAL SYSTEMS</h2>
+            <ul>
+                <li>
+                    <a href="#" data-src="bao.geojson" class="system-link"
+                        onclick="goToCoordinates('BAO RIS')">&nbsp;&nbsp;<b>BAO RIS</b></a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('bao.geojson')">
+                        <img src="information.png" alt="Details" class="download-icon" onclick="showTable('BAO RIS')">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="mainit.geojson" class="system-link"
+                        onclick="goToCoordinates('MAINIT RIS')">&nbsp;&nbsp;<b>MAINIT RIS</b></a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('mainit.geojson')">
+                        <img src="information.png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireNorth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE NORTH RIS')">&nbsp;&nbsp;<b>BALIRE
+                            NORTH</b></a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireNorth.geojson')">
+                        <img src="information.png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="information.png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <!-- <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li>
+                <li>
+                    <a href="#" data-src="BalireSouth.geojson" class="system-link"
+                        onclick="goToCoordinates('BALIRE SOUTH RIS')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>BALIRE SOUTH</a>
+                    <span class="icon-container">
+                        <img src="add2.png" alt="Service Area" class="plus-icon"
+                            onclick="toggleGeoJSONLayer('BalireSouth.geojson')">
+                        <img src="info(1).png" alt="Details" class="download-icon">
+                    </span>
+                </li> -->
+            </ul>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([11.4097, 125.1709], 8); // Set initial coordinates and zoom level
+        // Add the tile layer (OpenStreetMap)
+        var openStreetMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        }).addTo(map);
+        map.attributionControl.remove();
+    </script>
+    <script>
+        var geoJSONLayers = {};
+        // Function to toggle visibility of GeoJSON layer
+        function toggleGeoJSONLayer(src) {
+            if (!geoJSONLayers[src]) {
+                // Load GeoJSON data and add it to the map
+                fetch(src)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Add GeoJSON layer to the map
+                        geoJSONLayers[src] = L.geoJSON(data).addTo(map);
+                        // Fit map to GeoJSON extent
+                        map.fitBounds(geoJSONLayers[src].getBounds());
+                        // Fly to the center of the GeoJSON layer's bounds
+                        map.flyToBounds(geoJSONLayers[src].getBounds());
+                    })
+                    .catch(error => console.error('Error loading GeoJSON:', error));
+            } else {
+                // If GeoJSON layer exists, remove it from the map
+                map.removeLayer(geoJSONLayers[src]);
+                delete geoJSONLayers[src]; // Remove layer reference
+                // Fly to the default view
+                map.flyTo([system], 13, {
+                    duration: 5, // Duration of the animation in seconds
+                    easeLinearity: 0.25 // Rate of the animation
+                });
+            }
+        }
+    </script>
+    <script>
+        var markers = {}; // Object to store markers
+        function goToCoordinates(system) {
+            var coordinates, popupContent;
+            // Check which system is clicked and set the coordinates accordingly
+            if (system === 'BAO RIS') {
+                coordinates = [11.12412837981872, 124.58653739576792];
+                popupContent = 'BAO River Irrigation System<br>Location: Ormoc City, Leyte<br>Total Area: 900 Hectares<br>Number of IA: 8' + '<img src="1.png" alt="BAO RIS Photo" style="max-width: 100%;">'
+            } else if (system === 'MAINIT RIS') {
+                coordinates = [11.214931883423906, 124.82503714858869];
+                popupContent = 'MAINIT River Irrigation System<br>Location: Alangalang, Leyte<br>Total Area: 800 Hectares<br>Number of IA: 20 >' + '<img src="1.png" alt="BAO RIS Photo" style="max-width: 100%;">'
+            } else if (system === 'BALIRE NORTH RIS') {
+                coordinates = [10.814444, 124.947778];
+                popupContent = 'BALIRE NORTH River Irrigation System<br>Location: Alangalang, Leyte<br>Total Area: 800 Hectares<br>Number of IA: 20<br>' + '<img src="1.png" alt="BAO RIS Photo" style="max-width: 100%;">'
+            } else if (system === 'BALIRE SOUTH RIS') {
+                coordinates = [10.812500, 124.964167];
+                popupContent = 'BALIRE SOUTH River Irrigation System<br>Location: Alangalang, Leyte<br>Total Area: 800 Hectares<br>Number of IA: 20<br>' + '<img src="1.png" alt="BAO RIS Photo" style="max-width: 100%;">'
+            }
+            // Check if marker already exists
+            if (markers[system]) {
+                // If marker exists, remove it
+                map.removeLayer(markers[system]);
+                markers[system] = null; // Set marker reference to null
+            } else {
+                // If marker doesn't exist, create it
+                var marker = L.marker(coordinates).addTo(map)
+                    .bindPopup(popupContent)
+
+                markers[system] = marker; // Store marker reference
+                // Fly to the coordinates with marker
+                map.flyTo(coordinates, 13, {
+                    duration: 1, // Duration of the animation in seconds
+                    easeLinearity: 0.25 // Rate of the animation
+                });
+            }
+        }
+    </script>
+    <!-- <script>
+        function showTable(system) {
+            var tableContent;
+            // Generate table content based on the clicked system
+            if (system === 'BAO RIS') {
+                // Table content for BAO RIS
+                tableContent = '<table>' +
+                    '<tr>' +
+                    '<th>Column 1</th>' +
+                    '<th>Column 2</th>' +
+                    '<th>Column 3</th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<td>Data 1</td>' +
+                    '<td>Data 2</td>' +
+                    '<td>Data 3</td>' +
+                    '</tr>' +
+                    '</table>';
+            } else if (system === 'MAINIT RIS') {
+                // Table content for MAINIT RIS
+                tableContent = '<table>' +
+                    '<tr>' +
+                    '<th>Column 1</th>' +
+                    '<th>Column 2</th>' +
+                    '<th>Column 3</th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<td>Data 1</td>' +
+                    '<td>Data 2</td>' +
+                    '<td>Data 3</td>' +
+                    '</tr>' +
+                    '</table>';
+            }
+            // Create a popup with the table content and open it on the map
+            var popup = L.popup()
+                .setLatLng(map.getCenter()) // You can set the position of the popup as per your requirement
+                .setContent(tableContent)
+                .openOn(map);
+        }
+    </script> -->
+    <script>
+        var legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            var grades = [0, threshold]; // Example thresholds
+            var colors = ['red', 'green']; // Example colors
+            // Loop through legend labels and generate a colored square for each
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + colors[i] + '"></i> ' +
+                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            }
+            return div;
+        };
+        legend.addTo(map);
+    </script>
+</body>
+
+</html>

@@ -59,11 +59,12 @@ function initInfo(map) {
 
     if (properties) {
       innerHtml =
-        `<b>Region ${properties["Region"]}, ${properties["Pro_Name"]}</b><br>` +
+        `<b>Region ${properties["Region"]}, ${properties["pro_name"]}</b><br>` +
         `${properties["Sys_Name"]}<br>` +
         `Area: ${properties["area"]} hectares<br>` +
         `IA: ${properties["ia"]}<br>` +
-        `FUSA: ${properties["fusa"]}<br>`;
+        `FUSA: ${properties["fusa"]}<br>`+
+        `DIVISION: ${properties["division"]}`;
     } else {
       innerHtml = "Hover over an area";
     }
@@ -72,6 +73,11 @@ function initInfo(map) {
   };
 
   return info;
+}
+
+function addMarker() {
+  // Add a marker to the map
+  const marker = L.marker([center]).addTo(map);
 }
 
 const info = initInfo(map);
@@ -84,27 +90,25 @@ function bindToNode(map, nodeBtnContainer, geoData, center) {
     info.addTo(map);
   }
 
-  const btnOverlay = nodeBtnContainer.querySelector(".btn-nav-overlay");
+  const btnOverlay = nodeBtnContainer.querySelector(".btn-nav-overlay",);
   btnOverlay.addEventListener("click", () => {
     if (map.hasLayer(overlayLayer)) {
       map.removeLayer(overlayLayer);
     } else {
       overlayLayer.addTo(map);
+      map.setView(center, 13);
+      
+      // const marker =  L.marker([center]).addTo(map);
     }
   });
 
-  //  li
-  //    bt
-  //    bt
-  //    bt
-  //    bt
 
   // btnOverlay.classList.add("btn-nav");
   //  btnCenter.classList.add("btn-center");
 
   const btnCenter = nodeBtnContainer.querySelector(`.btn-nav-center`);
   btnCenter.addEventListener("click", () => {
-    map.setView(center);
+    map.setView(center, 15);
   });
 }
 

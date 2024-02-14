@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-overflow: hidden  ;
+  overflow: hidden;
 }
 
 /* Map dimension */
@@ -61,8 +61,7 @@ overflow: hidden  ;
   width: 150px;
 }
 
-/* 
-.btn-nav-overlay {
+.btn-nav-center {
   width: 125px;
   outline: none;
   cursor: pointer;
@@ -79,12 +78,12 @@ overflow: hidden  ;
   margin-top: 0.5vh;
 }
 
-.btn-nav-overlay:hover {
+.btn-nav-center:hover {
   color: #ffffff;
   background-color: #006570;
 }
 
-.btn-nav-center {
+.btn-nav-overlay {
   cursor: pointer;
   font-size: 2rem;
   color: #ffffff;
@@ -93,6 +92,6 @@ overflow: hidden  ;
   position: absolute;
 }
 
-.btn-nav-center:hover {
+.btn-nav-overlay:hover {
   color: #006570;
-}  */
+}

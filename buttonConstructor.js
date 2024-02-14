@@ -18,7 +18,7 @@ function buttonConstructor(sysName) {
   navLinkContainer.append(btnCenter, btnOverlay);
   // Insert new button to classname
   document.querySelector(".navbar").appendChild(navLinkContainer);
-  
+
   return navLinkContainer;
 }
 
@@ -28,4 +28,3 @@ function bindButtonEvents(button, center, map, data) {
 }
 
 export { buttonConstructor, bindButtonEvents };
-

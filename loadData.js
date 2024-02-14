@@ -29,6 +29,8 @@ async function loadData(dirs) {
 const centerData = {
   balireNorth: { lat: 10.822768169803306, lng: 124.97609138488771 },
   balireSouth: { lat: 10.804220717725277, lng: 124.98106956481935 },
+  bao: { lat: 11.126764909429827, lng: 124.58609974848302 },
+  mainit: { lat: 11.21846227086063, lng: 124.82465431127622 },
 };
 
 const geoData = await loadData(directories);

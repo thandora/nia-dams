@@ -3,9 +3,9 @@ import { geoData } from "./loadData.js";
 import { bindButtonEvents, buttonConstructor } from "./buttonConstructor.js";
 import { centerData } from "./loadData.js";
 
-const coordsDefault = [10.825004, 124.973758];
+const coordsDefault = [10.823433428097, 124.94409893341351];
 
-let map = L.map("map").setView(coordsDefault, 14);
+let map = L.map("map").setView(coordsDefault, 9);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 25,
@@ -66,3 +66,5 @@ function addSpace(titleCasedString) {
 // Helper functions. Remove/comment out if not needed
 import { initTests } from "./helper.js";
 // initTests(map, geoData);
+
+
